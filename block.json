@@ -1,0 +1,14 @@
+{
+	"name": "bcdl-block-gallery/bcdl-block-gallery",
+	"title": "BCDL Gutenberg Block Gallery",
+	"category": "common",
+	"icon": "format-gallery",
+	"description": "BCDL block written with ESNext standard and JSX support – build step required!",
+	"textdomain": "bcdl-block-gallery",
+	"supports": {
+		"html": false
+	},
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
