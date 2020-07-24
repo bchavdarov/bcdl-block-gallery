@@ -4,8 +4,7 @@
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
 import { __ } from '@wordpress/i18n';
-import { RichText, MediaUpload } from '@wordpress/block-editor';
-import { Button } from '@wordpress/components';
+import { RichText } from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -27,9 +26,10 @@ export default function save( props ) {
 			<RichText.Content tagName="h2" value={ title } />
 			{ mediaURL && (
 				<img
-					className="recipe-image"
+					className="bcdl-block-image"
 					src={ mediaURL }
-					alt={ __( 'Recipe Image', 'gutenberg-examples' ) }
+					//alt={ __( 'Recipe Image', 'gutenberg-examples' ) }
+					alt={ mediaAlt }
 				/>
 			) }
 			<RichText.Content

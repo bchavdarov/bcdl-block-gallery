@@ -38,6 +38,9 @@ export default function Edit( props ) {
 			mediaURL: media.url,
 			mediaID: media.id,
 		} );
+		setAttributes( {
+			mediaAlt: media.alt,
+		} );
 	};
 
 	const onChangeTitle = ( value ) => {
