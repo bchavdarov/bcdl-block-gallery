@@ -90,10 +90,7 @@ export default function Edit( props ) {
 			</div>
 			<RichText
 				tagName="p"
-				placeholder={ __(
-					'Write a description',
-					'bcdl-block-gallery'
-				) }
+				placeholder={ __( 'Write a description', 'bcdl-block-gallery' ) }
 				value={ body }
 				onChange={ onChangeBody }
 				className="bcdl-body"

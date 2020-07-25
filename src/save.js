@@ -23,15 +23,17 @@ export default function save( props ) {
 
 	return (
 		<div className={ className }>
-			<RichText.Content tagName="h2" value={ title } />
-			{ mediaURL && (
-				<img
-					className="bcdl-block-image"
-					src={ mediaURL }
-					//alt={ __( 'Recipe Image', 'gutenberg-examples' ) }
-					alt={ mediaAlt }
-				/>
-			) }
+			<RichText.Content tagName="h2" value={ title }/>
+			<div className="bcdl-image">
+				{ mediaURL && (
+					<img
+						className="bcdl-block-image"
+						src={ mediaURL }
+						//alt={ __( 'Recipe Image', 'gutenberg-examples' ) }
+						alt={ mediaAlt }
+					/>
+				) }
+			</div>
 			<RichText.Content
 				tagName="p"
 				className="bcdl-body"
