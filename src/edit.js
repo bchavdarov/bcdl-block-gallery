@@ -37,9 +37,8 @@ export default function Edit( props ) {
 		setAttributes( {
 			mediaURL: media.url,
 			mediaID: media.id,
-		} );
-		setAttributes( {
 			mediaAlt: media.alt,
+			title: media.alt,
 		} );
 	};
 

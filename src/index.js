@@ -64,12 +64,12 @@ registerBlockType( 'bcdl-block-gallery/bcdl-block-gallery', {
 		title: {
 			type: 'array',
 			source: 'children',
-			selector: '.card__title',
+			selector: 'h2',
 		},
 		body: {
 			type: 'array',
 			source: 'children',
-			selector: '.card__body',
+			selector: 'p',
 		},
 		mediaAlt: {
 			attribute: 'alt',
