@@ -22,6 +22,7 @@ export default function save( props ) {
 		} = props;
 
 	return (
+		<div>
 		<div className={ "card bcdl-mask-contain shadow" }>
 			<div className={ "img-contain" }>
 				{ mediaURL && (
@@ -35,7 +36,7 @@ export default function save( props ) {
 				<div class="bcdl-mask rounded"></div>
 			</div>
 			<div className="card-body">
-				<a className="stretched-link" href="#">
+				<a className="stretched-link" href="#" data-toggle="modal" data-target="#exampleModal">
 					<RichText.Content 
 						tagName="h2"
 						className="card-title h5 text-center bcdl-rounded font-weight-bold"
@@ -48,6 +49,25 @@ export default function save( props ) {
 					value={ body }
 				/>
 			</div>
+		</div>
+		<div class="modal fade h-100" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-xl h-100">
+				<div class="modal-content bg-dark">
+					<div class="modal-body">
+						{ mediaURL && (
+							<img
+									className="img-fluid"
+									src={ mediaURL }
+									alt={ mediaAlt }
+								/>
+							) }
+					</div>
+					<div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+				</div>
+			</div>
+		</div>
 		</div>
 	);
 }

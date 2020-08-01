@@ -52,6 +52,7 @@ export default function Edit( props ) {
 	};
 
 	return (
+		<div>
 		<div className="card bcdl-mask-contain shadow">
 			<div className="img-contain">
 				<MediaUploadCheck>
@@ -101,6 +102,22 @@ export default function Edit( props ) {
 					onChange={ onChangeBody }
 				/>
 			</div>
+		</div>
+		<div class="modal fade h-100" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-xl h-100">
+				<div class="modal-content bg-dark">
+					<div class="modal-body">
+						{ mediaURL && (
+							<img
+								className="img-fluid"
+								src={ mediaURL }
+								alt={ mediaAlt }
+							/>
+						) }
+					</div>
+				</div>
+			</div>
+		</div>
 		</div>
 	);
 }
