@@ -39,6 +39,7 @@ export default function Edit( props ) {
 			mediaID: media.id,
 			mediaAlt: media.alt,
 			title: media.alt,
+			body: media.description,
 		} );
 	};
 
