@@ -22,23 +22,32 @@ export default function save( props ) {
 		} = props;
 
 	return (
-		<div className={ className }>
-			<RichText.Content tagName="h2" value={ title }/>
-			<div className="bcdl-image">
+		<div className={ "card bcdl-mask-contain shadow" }>
+			<div className={ "img-contain" }>
 				{ mediaURL && (
 					<img
-						className="bcdl-block-image"
+						className="card-img"
 						src={ mediaURL }
 						//alt={ __( 'Recipe Image', 'gutenberg-examples' ) }
 						alt={ mediaAlt }
 					/>
 				) }
+				<div class="bcdl-mask rounded"></div>
 			</div>
-			<RichText.Content
-				tagName="p"
-				className="bcdl-body"
-				value={ body }
-			/>
+			<div className="card-body">
+				<a className="stretched-link" href="#">
+					<RichText.Content 
+						tagName="h2"
+						className="card-title h5 text-center bcdl-rounded font-weight-bold"
+						value={ title }
+					/>
+				</a>
+				<RichText.Content 
+					tagName="p"
+					className="card-text"
+					value={ body }
+				/>
+			</div>
 		</div>
 	);
 }

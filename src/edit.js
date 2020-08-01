@@ -4,7 +4,7 @@
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
 import { __ } from '@wordpress/i18n';
-import { RichText, MediaUpload } from '@wordpress/block-editor';
+import { RichText, MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 import { Button } from '@wordpress/components';
 
 /**
@@ -52,49 +52,55 @@ export default function Edit( props ) {
 	};
 
 	return (
-		<div className={ className }>
-			<RichText
-				tagName="h2"
-				placeholder={ __( 'Write image title…', 'bcdl-block-gallery' ) }
-				value={ title }
-				onChange={ onChangeTitle }
-			/>
-			<div className="bcdl-image">
-				<MediaUpload
-					onSelect={ onSelectImage }
-					allowedTypes="image"
-					value={ mediaID }
-					render={ ( { open } ) => (
-						<Button
-							className={
-								mediaID
-									? 'image-button'
-									: 'button button-large'
-							}
-							onClick={ open }
-						>
-							{ ! mediaID ? (
-								__( 'Upload Image', 'bcdl-block-gallery' )
-							) : (
-								<img
-									src={ mediaURL }
-									alt={ __(
-										'Upload Gallery Image',
-										'bcdl-block-gallery'
-									) }
-								/>
-							) }
-						</Button>
-					) }
+		<div className="card bcdl-mask-contain shadow">
+			<div className="img-contain">
+				<MediaUploadCheck>
+					<MediaUpload
+						onSelect={ onSelectImage }
+						allowedTypes="image"
+						value={ mediaID }
+						render={ ( { open } ) => (
+							<Button
+								className={
+									mediaID
+										? 'image-button'
+										: 'button button-large'
+								}
+								onClick={ open }
+							>
+								{ ! mediaID ? (
+									__( 'Upload Image', 'bcdl-block-gallery' )
+								) : (
+									<img
+										src={ mediaURL }
+										alt={ mediaAlt }
+										className="card-img"
+									/>
+								) }
+							</Button>
+						) }
+					/>
+				</MediaUploadCheck>
+				<div className="bcdl-mask rounded"></div>
+			</div>
+			<div className="card-body">
+				<a className="stretched-link" href="#">
+				<RichText
+					tagName="h2"
+					className="card-title h5 text-center bcdl-rounded font-weight-bold"
+					placeholder={ __( 'The card title', 'bcdl-block-gallery' ) }
+					value={ title }
+					onChange={ onChangeTitle }
+				/>
+				</a>
+				<RichText
+					tagName="p"
+					className="card-text"
+					placeholder={ __( 'The card body text', 'bcdl-block-gallery' ) }
+					value={ body }
+					onChange={ onChangeBody }
 				/>
 			</div>
-			<RichText
-				tagName="p"
-				placeholder={ __( 'Write a description', 'bcdl-block-gallery' ) }
-				value={ body }
-				onChange={ onChangeBody }
-				className="bcdl-body"
-			/>
 		</div>
 	);
 }
