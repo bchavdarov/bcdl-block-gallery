@@ -29,7 +29,7 @@ import './editor.scss';
 export default function Edit( props ) {
 	const {
 		className,
-		attributes: { title, body, mediaAlt, mediaID, mediaURL },
+		attributes: { title, body, mediaAlt, mediaID, mediaURL, mediaIdTag },
 		setAttributes,
 	} = props;
 
@@ -40,6 +40,7 @@ export default function Edit( props ) {
 			mediaAlt: media.alt,
 			title: media.alt,
 			body: media.description,
+			mediaIdTag: "bcdlimg" + media.id,
 		} );
 	};
 
@@ -52,7 +53,7 @@ export default function Edit( props ) {
 	};
 
 	return (
-		<div>
+		<div className="col-6 py-3">
 		<div className="card bcdl-mask-contain shadow">
 			<div className="img-contain">
 				<MediaUploadCheck>
@@ -85,10 +86,10 @@ export default function Edit( props ) {
 				<div className="bcdl-mask rounded"></div>
 			</div>
 			<div className="card-body">
-				<a className="stretched-link" href="#">
+				<a className="stretched-link clearlink" href="#">
 				<RichText
 					tagName="h2"
-					className="card-title h5 text-center bcdl-rounded font-weight-bold"
+					className="card-title h3 text-center bcdl-rounded font-weight-bold"
 					placeholder={ __( 'The card title', 'bcdl-block-gallery' ) }
 					value={ title }
 					onChange={ onChangeTitle }
@@ -103,8 +104,8 @@ export default function Edit( props ) {
 				/>
 			</div>
 		</div>
-		<div class="modal fade h-100" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-xl h-100">
+		<div class="modal fade h-100" id={ mediaIdTag } tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-xl h-100">
 				<div class="modal-content bg-dark">
 					<div class="modal-body">
 						{ mediaURL && (

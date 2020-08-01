@@ -73,7 +73,7 @@ registerBlockType( 'bcdl-block-gallery/bcdl-block-gallery', {
 		},
 		mediaAlt: {
 			attribute: 'alt',
-			selector: '.card__image',
+			selector: 'img',
 		},
 		mediaID: {
 			type: 'number',
@@ -84,6 +84,10 @@ registerBlockType( 'bcdl-block-gallery/bcdl-block-gallery', {
 			selector: 'img',
 			attribute: 'src',
 		},
+		mediaIdTag: {
+			type: 'string',
+			attribute: 'id',
+		}
 	},
 
 	/**

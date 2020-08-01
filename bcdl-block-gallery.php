@@ -3,7 +3,7 @@
  * Plugin Name:        BCDL Gutenberg Block Gallery
  * Plugin URI:         https://github.com/bchavdarov/bcdl-block-gallery
  * Description:        BCDL block written with ESNext standard and JSX support – build step required!
- * Version:            1.0.0
+ * Version:            1.2
  * Requires at least:  5.2
  * Requires PHP:       7.2
  * Author:             Boncho Chavdarov
