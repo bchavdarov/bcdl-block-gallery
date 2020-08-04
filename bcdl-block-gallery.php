@@ -7,7 +7,7 @@
  * Requires at least:  5.2
  * Requires PHP:       7.2
  * Author:             Boncho Chavdarov
- * Author URI:        https://bchavdarov.github.io/bcdlab
+ * Author URI:         https://bchavdarov.github.io/bcdlab
  * License:            GPL-2.0-or-later
  * License URI:        https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:        bcdl-block-gallery
